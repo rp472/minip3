@@ -12,42 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('pages.index');
+    return view('welcome');
 });
 
-Route::get('/about', function () {
-    return view('pages.about');
-});
+Auth::routes();
 
-Route::get('/contact', function () {
-    return view('pages.contact');
-});
-
-Route::get('/signin', function () {
-    return view('pages.signin');
-});
-
-Route::get('/signup', function () {
-    return view('pages.signup');
-});
-
-Route::get('/logout', function () {
-    return view('pages.logout');
-});
-
-Route::get('viewmessages', function () {
-    return view('pages.viewmessages');
-
-});
-
-
-Route::get('messagedata', function () {
-    return view('pages.messagedata');
-
-});
-Route::post('/contact', function () {
-
-    $data = request() ->all();
-    dd($data);
-});
+Route::get('/home', 'HomeController@index')->name('home');
 
